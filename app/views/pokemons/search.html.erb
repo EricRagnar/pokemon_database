@@ -1,0 +1,14 @@
+<div class="data">
+
+<p>Results for  <%= params[:keywords]%>:</p>
+<%if(@pokemons.empty?)%>
+<p> Cannot find a pokemon with that name.</p>
+
+<%else%>
+<ul>
+ <% @pokemons.each do |pokemons|%>
+  <li> <%=pokemons.name%> </li>
+  <%end%>
+</ul>
+<%end%>
+</div>

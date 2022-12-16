@@ -1,17 +1,14 @@
-<%= form_with(model: pokemon) do |form| %>
-  <% if pokemon.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(pokemon.errors.count, "error") %> prohibited this pokemon from being saved:</h2>
+<div class="data">
 
-      <ul>
-        <% pokemon.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<p>Results for  <%= params[:keywords]%>:</p>
+<%if(@pokemon.empty?)%>
+<p> Could not find a pokemon with that name.</p>
 
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+<%else%>
+<ul>
+ <% @Pokemon.each do |pokemon|%>
+  <li> <%=link_to dog.name , dog %> </li>
+  <%end%>
+</ul>
+<%end%>
+</div>

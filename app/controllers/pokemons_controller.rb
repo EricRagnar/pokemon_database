@@ -1,6 +1,11 @@
 class PokemonsController < ApplicationController
   before_action :set_pokemon, only: %i[ show edit update destroy ]
 
+  def search
+    search = "%#{params[:keywords]}%"
+    @pokemons = Pokemon.where("name LIKE ?", search)
+  end
+
   # GET /pokemons or /pokemons.json
   def index
     @pokemons = Pokemon.all

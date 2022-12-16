@@ -2,6 +2,10 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<%= csrf_meta_tags %>
+<%= csp_meta_tag %>
+
+<%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
 <style>
 * {
   box-sizing: border-box;
@@ -43,6 +47,12 @@
       <a href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
       <a href="/" >Home</a>
       <a href="/about" >About</a>
+
+      <%= form_with(url:pokemons_search_path, method: :get, local: true) do %>
+      <%= text_field_tag(:keywords, nil, class: "input is-rounded", placeholder: 'Pokemon Search')%>
+      <%= submit_tag("Search", class: "button is-success is-rounded")%>
+
+<%end%>
   </div>
     <%= yield %>
   </body>

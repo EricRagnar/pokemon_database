@@ -1,6 +1,7 @@
 <!-- First Grid -->
-<div class="w3-row-padding w3-padding-64 w3-container">
- <section class="layout">
+<div>
+<%=paginate @data%>
+ <section>
     <div class="row">
       <% @pokemon.each do |item| %>
         <div class="column" style="background-color:#aaa;">
