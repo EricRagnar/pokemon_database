@@ -3,10 +3,10 @@ class HomeController < ApplicationController
     @pokemon = Pokemon.order("id ASC")
 
     @data = @pokemon.limit(5).page(params[:page])
-    #@pagination = @pokemon.page(7)
+    @pagination = @pokemon.page(7)
   end
 
   def show
-    #@dogsshow = Dog.find(params[:id])
+    #show stuff: TBD
   end
 end

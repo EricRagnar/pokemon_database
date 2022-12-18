@@ -1,4 +1,3 @@
-<!-- First Grid -->
 <div>
 <%=paginate @data%>
  <section>
@@ -6,6 +5,7 @@
       <% @pokemon.each do |item| %>
         <div class="column" style="background-color:#aaa;">
           <h2><%=item.name%></h2>
+          <h1><%=item.type1%></h1>
         </div>
       <% end %>
     </div>
