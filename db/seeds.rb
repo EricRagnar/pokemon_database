@@ -8,7 +8,7 @@
 
 require 'csv'
 
-filename = Rails.root.join("lib", "assets", "Pokemon.csv") # build out the absolute path to file
+filename = Rails.root.join("lib/assets/Pokemon.csv") # build out the absolute path to file
 
 csv_data = File.read(filename)
 pokemon = CSV.parse(csv_data, headers: true, encoding: "utf-8")
